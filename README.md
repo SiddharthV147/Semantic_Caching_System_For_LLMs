@@ -14,7 +14,6 @@ A high-performance, context-aware semantic caching system for Learning Managemen
                                        ▼
                        ┌───────────────────────────────┐
                        │   Convert Question to Vector  │
-                       │   (BAAI/bge-large-en-v1.5)    │
                        └───────────────┬───────────────┘
                                        │
                                        ▼
@@ -24,13 +23,13 @@ A high-performance, context-aware semantic caching system for Learning Managemen
                                        │
                        ┌───────────────┴───────────────┐
                        │                               │
-            Cosine Similarity ≥ 0.92?       Cosine Similarity < 0.92
+            Cosine Similarity ≥ 0.80?       Cosine Similarity < 0.80
                   [ CACHE HIT ]                   [ CACHE MISS ]
                        │                               │
                        ▼                               ▼
             ┌─────────────────────┐         ┌─────────────────────┐
             │  Fetch Answer from  │         │ Call LLM API        │
-            │        Redis        │         │ (Qwen2.5 via HF)    │
+            │        Redis        │         │                     │
             └──────────┬──────────┘         └──────────┬──────────┘
                        │                               │
                        │                    ┌──────────┴──────────┐
