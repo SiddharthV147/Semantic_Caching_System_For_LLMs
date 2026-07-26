@@ -1,6 +1,6 @@
 # LMS Semantic Cache 
 
-A high-performance, context-aware semantic caching system for Learning Management Systems (LMS) designed to dramatically reduce AI API costs and serve instant responses to rephrased student questions.
+A high-performance, context-aware semantic caching system for Learning Management Systems (LMS) designed to reduce AI API costs and serve instant responses to rephrased questions.
 
 ---
 
