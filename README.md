@@ -1,14 +1,6 @@
 # LMS Semantic Cache 🚀
 
-> A high-performance, context-aware semantic caching system for Learning Management Systems (LMS) designed to dramatically reduce AI API costs and serve instant responses to rephrased student questions.
-
----
-
-## 📌 Overview
-
-In educational platforms, students frequently ask questions that share the exact same underlying meaning (e.g., *"What is gradient descent?"* vs. *"Can you explain gradient descent?"*). Traditional key-value caches fail here because the query strings don't match word-for-word.
-
-**LMS Semantic Cache** solves this by caching queries based on **semantic meaning (vectors)** rather than raw text. If a new question is conceptually similar to a previously answered one, the system serves the cached response instantly—cutting LLM response times by up to **15x** and saving significant API costs.
+A high-performance, context-aware semantic caching system for Learning Management Systems (LMS) designed to dramatically reduce AI API costs and serve instant responses to rephrased student questions.
 
 ---
 
