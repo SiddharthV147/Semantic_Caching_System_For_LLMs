@@ -131,13 +131,4 @@ curl -X POST http://localhost:8000/api/v1/query \
   }'
 ```
 
----
 
-## Performance & Benchmarks
-
-Benchmarked using `demo_cache_performance.py` over a dataset of 60 queries across 20 concept groups:
-
-* **Cache Hit Rate Target:** ~65%
-* **Cache Hit Latency:** ~400–600 ms (Vector embedding generation + Redis lookup)
-* **Cache Miss Latency:** ~5,000–8,000 ms (Vector generation + Remote LLM API invocation)
-* **Performance Gain:** **~10x to 15x speedup** on cache hits
