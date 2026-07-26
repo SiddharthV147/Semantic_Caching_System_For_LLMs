@@ -99,9 +99,6 @@ docker compose up -d
 ### 4. Initialize Database & Run Server
 
 ```bash
-# Initialize vector collections for courses
-python -m src.database.db_setup CS101 MATH202 ENG301
-
 # Start the FastAPI server
 python main.py
 ```
