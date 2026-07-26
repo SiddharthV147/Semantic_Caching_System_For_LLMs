@@ -45,39 +45,6 @@ A high-performance, context-aware semantic caching system for Learning Managemen
                         └─────────────────────────────┘
 ```
 
-## Tech Stack
-
-| Component | Technology | Purpose |
-|---|---|---|
-| **Vector DB** | [Milvus](https://milvus.io/) | Stores question embeddings & performs fast similarity searches |
-| **Cache Store** | [Redis](https://redis.io/) | Key-value store for direct answer retrieval |
-| **Embedding Model** | `BAAI/bge-large-en-v1.5` | Converts text questions into numerical vectors |
-| **LLM Inference** | HuggingFace Inference API | Generates answers on cache miss using `Qwen2.5-7B-Instruct` |
-| **API Framework** | FastAPI | Asynchronous Python REST API framework |
-| **Orchestration** | Docker Compose | Local deployment of Redis & Milvus containers |
-
----
-
-## Project Structure
-
-```text
-lms-semantic-cache/
-├── config/                  # Global application settings & thresholds
-├── src/
-│   ├── api/                 # FastAPI routes and request/response models
-│   ├── cache/               # Cache read/write orchestration logic
-│   ├── database/            # Connection setups for Milvus & Redis
-│   ├── embeddings/          # Vector conversion module (HuggingFace/SentenceTransformers)
-│   ├── knowledge/           # Course knowledge base management
-│   ├── llm/                 # LLM client & prompt templates
-│   └── orchestrator.py      # Core workflow pipeline (Cache → KB → LLM)
-├── tests/                   # Unit, integration, and smoke tests
-├── demo_queries.json        # Benchmark dataset (60 queries across 3 courses)
-├── demo_cache_performance.py# Performance benchmark script
-├── main.py                  # API server startup entrypoint
-└── docker-compose.yml       # Infrastructure orchestration
-```
-
 ---
 
 ## Getting Started
