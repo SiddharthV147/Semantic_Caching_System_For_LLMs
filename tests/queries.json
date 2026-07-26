@@ -1,0 +1,86 @@
+{
+  "description": "Query dataset for LMS Semantic Cache demo. 20 concept groups x 3 queries (original -> repeat -> paraphrase) = 60 total queries. 16 groups use a 'tight' paraphrase (varied wording, same meaning -> expected cache HIT). 4 groups use a 'loose' paraphrase (same concept, very different wording -> expected cache MISS). Engineered target hit rate: 60.0% (16x2 + 4x1 = 36 hits / 60 queries).",
+  "queries": [
+
+    { "group": "Machine Learning", "course_tag": "CS101", "query": "What is machine learning?", "kind": "original", "expected_hit": false },
+    { "group": "Machine Learning", "course_tag": "CS101", "query": "What is machine learning?", "kind": "repeat", "expected_hit": true },
+    { "group": "Machine Learning", "course_tag": "CS101", "query": "Could you explain what machine learning means?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Gradient Descent", "course_tag": "CS101", "query": "Can you define gradient descent?", "kind": "original", "expected_hit": false },
+    { "group": "Gradient Descent", "course_tag": "CS101", "query": "Can you define gradient descent?", "kind": "repeat", "expected_hit": true },
+    { "group": "Gradient Descent", "course_tag": "CS101", "query": "What exactly is gradient descent?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Backpropagation", "course_tag": "CS101", "query": "Explain backpropagation.", "kind": "original", "expected_hit": false },
+    { "group": "Backpropagation", "course_tag": "CS101", "query": "Explain backpropagation.", "kind": "repeat", "expected_hit": true },
+    { "group": "Backpropagation", "course_tag": "CS101", "query": "How do neural networks update their internal weights during training?", "kind": "paraphrase", "expected_hit": false },
+
+    { "group": "Neural Networks", "course_tag": "CS101", "query": "What does a neural network mean?", "kind": "original", "expected_hit": false },
+    { "group": "Neural Networks", "course_tag": "CS101", "query": "What does a neural network mean?", "kind": "repeat", "expected_hit": true },
+    { "group": "Neural Networks", "course_tag": "CS101", "query": "Could you describe what a neural network is?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Overfitting", "course_tag": "CS101", "query": "Could you tell me what overfitting in machine learning is?", "kind": "original", "expected_hit": false },
+    { "group": "Overfitting", "course_tag": "CS101", "query": "Could you tell me what overfitting in machine learning is?", "kind": "repeat", "expected_hit": true },
+    { "group": "Overfitting", "course_tag": "CS101", "query": "Please explain the concept of overfitting in machine learning.", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Supervised Learning", "course_tag": "CS101", "query": "What is supervised learning?", "kind": "original", "expected_hit": false },
+    { "group": "Supervised Learning", "course_tag": "CS101", "query": "What is supervised learning?", "kind": "repeat", "expected_hit": true },
+    { "group": "Supervised Learning", "course_tag": "CS101", "query": "How does a model learn from labeled training examples?", "kind": "paraphrase", "expected_hit": false },
+
+    { "group": "Hash Tables", "course_tag": "CS101", "query": "Can you define a hash table?", "kind": "original", "expected_hit": false },
+    { "group": "Hash Tables", "course_tag": "CS101", "query": "Can you define a hash table?", "kind": "repeat", "expected_hit": true },
+    { "group": "Hash Tables", "course_tag": "CS101", "query": "Tell me what a hash table is.", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Big O Notation", "course_tag": "CS101", "query": "Explain Big O notation.", "kind": "original", "expected_hit": false },
+    { "group": "Big O Notation", "course_tag": "CS101", "query": "Explain Big O notation.", "kind": "repeat", "expected_hit": true },
+    { "group": "Big O Notation", "course_tag": "CS101", "query": "How would you define Big O notation?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Derivatives", "course_tag": "MATH202", "query": "What does a derivative in calculus mean?", "kind": "original", "expected_hit": false },
+    { "group": "Derivatives", "course_tag": "MATH202", "query": "What does a derivative in calculus mean?", "kind": "repeat", "expected_hit": true },
+    { "group": "Derivatives", "course_tag": "MATH202", "query": "Walk me through what a derivative in calculus means.", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Chain Rule", "course_tag": "MATH202", "query": "Could you tell me what the chain rule is?", "kind": "original", "expected_hit": false },
+    { "group": "Chain Rule", "course_tag": "MATH202", "query": "Could you tell me what the chain rule is?", "kind": "repeat", "expected_hit": true },
+    { "group": "Chain Rule", "course_tag": "MATH202", "query": "I'd like to understand what the chain rule is, can you explain?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Integration", "course_tag": "MATH202", "query": "What is integration in calculus?", "kind": "original", "expected_hit": false },
+    { "group": "Integration", "course_tag": "MATH202", "query": "What is integration in calculus?", "kind": "repeat", "expected_hit": true },
+    { "group": "Integration", "course_tag": "MATH202", "query": "How do you calculate the area under a curve?", "kind": "paraphrase", "expected_hit": false },
+
+    { "group": "Eigenvalues", "course_tag": "MATH202", "query": "Can you define an eigenvalue?", "kind": "original", "expected_hit": false },
+    { "group": "Eigenvalues", "course_tag": "MATH202", "query": "Can you define an eigenvalue?", "kind": "repeat", "expected_hit": true },
+    { "group": "Eigenvalues", "course_tag": "MATH202", "query": "What exactly is an eigenvalue?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Matrix Multiplication", "course_tag": "MATH202", "query": "Explain matrix multiplication.", "kind": "original", "expected_hit": false },
+    { "group": "Matrix Multiplication", "course_tag": "MATH202", "query": "Explain matrix multiplication.", "kind": "repeat", "expected_hit": true },
+    { "group": "Matrix Multiplication", "course_tag": "MATH202", "query": "Could you describe what matrix multiplication means?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Probability Distribution", "course_tag": "MATH202", "query": "What is a probability distribution?", "kind": "original", "expected_hit": false },
+    { "group": "Probability Distribution", "course_tag": "MATH202", "query": "What is a probability distribution?", "kind": "repeat", "expected_hit": true },
+    { "group": "Probability Distribution", "course_tag": "MATH202", "query": "Please explain the concept of a probability distribution.", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Quantum Entanglement", "course_tag": "PHYS404", "query": "What does quantum entanglement mean?", "kind": "original", "expected_hit": false },
+    { "group": "Quantum Entanglement", "course_tag": "PHYS404", "query": "What does quantum entanglement mean?", "kind": "repeat", "expected_hit": true },
+    { "group": "Quantum Entanglement", "course_tag": "PHYS404", "query": "Tell me what quantum entanglement is.", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Newton's Second Law", "course_tag": "PHYS404", "query": "Could you tell me what Newton's second law of motion is?", "kind": "original", "expected_hit": false },
+    { "group": "Newton's Second Law", "course_tag": "PHYS404", "query": "Could you tell me what Newton's second law of motion is?", "kind": "repeat", "expected_hit": true },
+    { "group": "Newton's Second Law", "course_tag": "PHYS404", "query": "How would you define Newton's second law of motion?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "2nd Law of Thermodynamics", "course_tag": "PHYS404", "query": "What is the second law of thermodynamics?", "kind": "original", "expected_hit": false },
+    { "group": "2nd Law of Thermodynamics", "course_tag": "PHYS404", "query": "What is the second law of thermodynamics?", "kind": "repeat", "expected_hit": true },
+    { "group": "2nd Law of Thermodynamics", "course_tag": "PHYS404", "query": "Why does entropy always increase in an isolated system?", "kind": "paraphrase", "expected_hit": false },
+
+    { "group": "Wave-Particle Duality", "course_tag": "PHYS404", "query": "Can you define wave-particle duality?", "kind": "original", "expected_hit": false },
+    { "group": "Wave-Particle Duality", "course_tag": "PHYS404", "query": "Can you define wave-particle duality?", "kind": "repeat", "expected_hit": true },
+    { "group": "Wave-Particle Duality", "course_tag": "PHYS404", "query": "What exactly is wave-particle duality?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Special Relativity", "course_tag": "PHYS404", "query": "Explain special relativity.", "kind": "original", "expected_hit": false },
+    { "group": "Special Relativity", "course_tag": "PHYS404", "query": "Explain special relativity.", "kind": "repeat", "expected_hit": true },
+    { "group": "Special Relativity", "course_tag": "PHYS404", "query": "I'd like to understand what special relativity is, can you explain?", "kind": "paraphrase", "expected_hit": true },
+
+    { "group": "Schrodinger's Equation", "course_tag": "PHYS404", "query": "What does Schrodinger's equation mean?", "kind": "original", "expected_hit": false },
+    { "group": "Schrodinger's Equation", "course_tag": "PHYS404", "query": "What does Schrodinger's equation mean?", "kind": "repeat", "expected_hit": true },
+    { "group": "Schrodinger's Equation", "course_tag": "PHYS404", "query": "Walk me through what Schrodinger's equation means.", "kind": "paraphrase", "expected_hit": true }
+
+  ]
+}

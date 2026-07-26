@@ -1,0 +1,209 @@
+==================================================================================
+  LMS SEMANTIC CACHE - PERFORMANCE REPORT
+==================================================================================
+  Generated      : 2026-06-23 04:37:35
+  Target API     : http://localhost:8000
+  Total queries  : 60  (20 concept groups)
+
+----------------------------------------------------------------------------------
+  SUMMARY
+----------------------------------------------------------------------------------
+  Successful requests     : 60 / 60
+  Failed requests          : 0
+  Cache HITs               : 38
+  Cache MISSes             : 22
+  Predicted hit rate       : 60.0%  (from dataset design)
+  ACTUAL hit rate          : 63.3%
+  Prediction accuracy      : 93.3%  (56/60 queries matched the engineered design)
+
+  Avg latency (HIT)        :     361.41 ms
+  Avg latency (MISS)       :    5812.92 ms
+  Avg latency (overall)    :    2360.29 ms
+  Cache speedup factor     :      16.08x faster on a hit
+
+----------------------------------------------------------------------------------
+  SEMANTIC SEARCH EFFECTIVENESS
+----------------------------------------------------------------------------------
+  Total paraphrases tested        : 20
+  Paraphrases that hit cache       : 15 (75.0%)
+
+  TIGHT paraphrases  : 16 tested, 93.8% hit rate  (designed to HIT)
+  LOOSE paraphrases  : 4 tested, 0.0% hit rate  (designed to MISS)
+
+  -> TIGHT paraphrases hitting near 100% and LOOSE paraphrases hitting
+     near 0% confirms the embedding model is drawing a sensible semantic
+     boundary at the similarity threshold - not too loose, not too strict.
+
+----------------------------------------------------------------------------------
+  PER-CONCEPT-GROUP BREAKDOWN
+----------------------------------------------------------------------------------
+
+  > Machine Learning  (CS101)  [tight paraphrase design]
+      [original  ] MISS OK | sim=N/A    |    5200.8ms | "What is machine learning?"
+      [repeat    ] HIT  OK | sim=1.0000 |     227.2ms | "What is machine learning?"
+      [paraphrase] HIT  OK | sim=0.9334 |     290.7ms | "Could you explain what machine learning means?"
+
+  > Gradient Descent  (CS101)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6922 |    5398.1ms | "Can you define gradient descent?"
+      [repeat    ] HIT  OK | sim=1.0000 |     380.5ms | "Can you define gradient descent?"
+      [paraphrase] HIT  OK | sim=0.9079 |     487.6ms | "What exactly is gradient descent?"
+
+  > Backpropagation  (CS101)  [loose paraphrase design]
+      [original  ] MISS OK | sim=0.6952 |    6125.9ms | "Explain backpropagation."
+      [repeat    ] HIT  OK | sim=1.0000 |     253.4ms | "Explain backpropagation."
+      [paraphrase] MISS OK | sim=0.7082 |    6269.6ms | "How do neural networks update their internal weights during training?"
+
+  > Neural Networks  (CS101)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.7867 |    6422.1ms | "What does a neural network mean?"
+      [repeat    ] HIT  OK | sim=1.0000 |     375.6ms | "What does a neural network mean?"
+      [paraphrase] HIT  OK | sim=0.8920 |     289.6ms | "Could you describe what a neural network is?"
+
+  > Overfitting  (CS101)  [tight paraphrase design]
+      [original  ] HIT  XX | sim=0.8141 |     487.5ms | "Could you tell me what overfitting in machine learning is?"
+      [repeat    ] HIT  OK | sim=0.8141 |     290.9ms | "Could you tell me what overfitting in machine learning is?"
+      [paraphrase] MISS XX | sim=0.7708 |    5988.1ms | "Please explain the concept of overfitting in machine learning."
+
+  > Supervised Learning  (CS101)  [loose paraphrase design]
+      [original  ] HIT  XX | sim=0.8196 |     389.0ms | "What is supervised learning?"
+      [repeat    ] HIT  OK | sim=0.8196 |     290.5ms | "What is supervised learning?"
+      [paraphrase] MISS OK | sim=0.7243 |    6198.4ms | "How does a model learn from labeled training examples?"
+
+  > Hash Tables  (CS101)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6454 |    5145.7ms | "Can you define a hash table?"
+      [repeat    ] HIT  OK | sim=1.0000 |     526.7ms | "Can you define a hash table?"
+      [paraphrase] HIT  OK | sim=0.9071 |     492.0ms | "Tell me what a hash table is."
+
+  > Big O Notation  (CS101)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.7301 |    6960.9ms | "Explain Big O notation."
+      [repeat    ] HIT  OK | sim=1.0000 |     219.3ms | "Explain Big O notation."
+      [paraphrase] HIT  OK | sim=0.9259 |     487.4ms | "How would you define Big O notation?"
+
+  > Derivatives  (MATH202)  [tight paraphrase design]
+      [original  ] MISS OK | sim=N/A    |    6028.4ms | "What does a derivative in calculus mean?"
+      [repeat    ] HIT  OK | sim=1.0000 |     550.5ms | "What does a derivative in calculus mean?"
+      [paraphrase] HIT  OK | sim=0.9318 |     290.7ms | "Walk me through what a derivative in calculus means."
+
+  > Chain Rule  (MATH202)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6952 |    5960.4ms | "Could you tell me what the chain rule is?"
+      [repeat    ] HIT  OK | sim=1.0000 |     415.2ms | "Could you tell me what the chain rule is?"
+      [paraphrase] HIT  OK | sim=0.9649 |     291.6ms | "I'd like to understand what the chain rule is, can you explain?"
+
+  > Integration  (MATH202)  [loose paraphrase design]
+      [original  ] MISS OK | sim=0.7635 |    6032.4ms | "What is integration in calculus?"
+      [repeat    ] HIT  OK | sim=1.0000 |     546.1ms | "What is integration in calculus?"
+      [paraphrase] MISS OK | sim=0.6758 |    6716.0ms | "How do you calculate the area under a curve?"
+
+  > Eigenvalues  (MATH202)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6686 |    4359.0ms | "Can you define an eigenvalue?"
+      [repeat    ] HIT  OK | sim=1.0000 |     395.7ms | "Can you define an eigenvalue?"
+      [paraphrase] HIT  OK | sim=0.9076 |     286.1ms | "What exactly is an eigenvalue?"
+
+  > Matrix Multiplication  (MATH202)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.7347 |    6370.7ms | "Explain matrix multiplication."
+      [repeat    ] HIT  OK | sim=1.0000 |     207.6ms | "Explain matrix multiplication."
+      [paraphrase] HIT  OK | sim=0.9545 |     492.6ms | "Could you describe what matrix multiplication means?"
+
+  > Probability Distribution  (MATH202)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6533 |    4729.0ms | "What is a probability distribution?"
+      [repeat    ] HIT  OK | sim=1.0000 |     248.7ms | "What is a probability distribution?"
+      [paraphrase] HIT  OK | sim=0.9280 |     291.1ms | "Please explain the concept of a probability distribution."
+
+  > Quantum Entanglement  (PHYS404)  [tight paraphrase design]
+      [original  ] MISS OK | sim=N/A    |    5347.6ms | "What does quantum entanglement mean?"
+      [repeat    ] HIT  OK | sim=1.0000 |     230.5ms | "What does quantum entanglement mean?"
+      [paraphrase] HIT  OK | sim=0.9135 |     290.9ms | "Tell me what quantum entanglement is."
+
+  > Newton's Second Law  (PHYS404)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.5895 |    5179.3ms | "Could you tell me what Newton's second law of motion is?"
+      [repeat    ] HIT  OK | sim=1.0000 |     198.6ms | "Could you tell me what Newton's second law of motion is?"
+      [paraphrase] HIT  OK | sim=0.9533 |     291.8ms | "How would you define Newton's second law of motion?"
+
+  > 2nd Law of Thermodynamics  (PHYS404)  [loose paraphrase design]
+      [original  ] HIT  XX | sim=0.8342 |     486.6ms | "What is the second law of thermodynamics?"
+      [repeat    ] HIT  OK | sim=0.8342 |     285.2ms | "What is the second law of thermodynamics?"
+      [paraphrase] MISS OK | sim=0.5711 |    5692.5ms | "Why does entropy always increase in an isolated system?"
+
+  > Wave-Particle Duality  (PHYS404)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.6923 |    4713.3ms | "Can you define wave-particle duality?"
+      [repeat    ] HIT  OK | sim=1.0000 |     267.5ms | "Can you define wave-particle duality?"
+      [paraphrase] HIT  OK | sim=0.9414 |     285.9ms | "What exactly is wave-particle duality?"
+
+  > Special Relativity  (PHYS404)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.7700 |    6591.1ms | "Explain special relativity."
+      [repeat    ] HIT  OK | sim=1.0000 |     392.5ms | "Explain special relativity."
+      [paraphrase] HIT  OK | sim=0.9273 |     490.5ms | "I'd like to understand what special relativity is, can you explain?"
+
+  > Schrodinger's Equation  (PHYS404)  [tight paraphrase design]
+      [original  ] MISS OK | sim=0.7486 |    6455.1ms | "What does Schrodinger's equation mean?"
+      [repeat    ] HIT  OK | sim=1.0000 |     522.7ms | "What does Schrodinger's equation mean?"
+      [paraphrase] HIT  OK | sim=0.9326 |     486.6ms | "Walk me through what Schrodinger's equation means."
+
+----------------------------------------------------------------------------------
+  FULL QUERY LOG
+----------------------------------------------------------------------------------
+  #   Course    Kind        Hit   Pred  Sim      Latency(ms)   Query
+  ------------------------------------------------------------------------------
+  1   CS101     original    NO    OK    N/A      5200.8        What is machine learning?
+  2   CS101     repeat      YES   OK    1.0000   227.2         What is machine learning?
+  3   CS101     paraphrase  YES   OK    0.9334   290.7         Could you explain what machine learning means?
+  4   CS101     original    NO    OK    0.6922   5398.1        Can you define gradient descent?
+  5   CS101     repeat      YES   OK    1.0000   380.5         Can you define gradient descent?
+  6   CS101     paraphrase  YES   OK    0.9079   487.6         What exactly is gradient descent?
+  7   CS101     original    NO    OK    0.6952   6125.9        Explain backpropagation.
+  8   CS101     repeat      YES   OK    1.0000   253.4         Explain backpropagation.
+  9   CS101     paraphrase  NO    OK    0.7082   6269.6        How do neural networks update their internal weights during training?
+  10  CS101     original    NO    OK    0.7867   6422.1        What does a neural network mean?
+  11  CS101     repeat      YES   OK    1.0000   375.6         What does a neural network mean?
+  12  CS101     paraphrase  YES   OK    0.8920   289.6         Could you describe what a neural network is?
+  13  CS101     original    YES   XX    0.8141   487.5         Could you tell me what overfitting in machine learning is?
+  14  CS101     repeat      YES   OK    0.8141   290.9         Could you tell me what overfitting in machine learning is?
+  15  CS101     paraphrase  NO    XX    0.7708   5988.1        Please explain the concept of overfitting in machine learning.
+  16  CS101     original    YES   XX    0.8196   389.0         What is supervised learning?
+  17  CS101     repeat      YES   OK    0.8196   290.5         What is supervised learning?
+  18  CS101     paraphrase  NO    OK    0.7243   6198.4        How does a model learn from labeled training examples?
+  19  CS101     original    NO    OK    0.6454   5145.7        Can you define a hash table?
+  20  CS101     repeat      YES   OK    1.0000   526.7         Can you define a hash table?
+  21  CS101     paraphrase  YES   OK    0.9071   492.0         Tell me what a hash table is.
+  22  CS101     original    NO    OK    0.7301   6960.9        Explain Big O notation.
+  23  CS101     repeat      YES   OK    1.0000   219.3         Explain Big O notation.
+  24  CS101     paraphrase  YES   OK    0.9259   487.4         How would you define Big O notation?
+  25  MATH202   original    NO    OK    N/A      6028.4        What does a derivative in calculus mean?
+  26  MATH202   repeat      YES   OK    1.0000   550.5         What does a derivative in calculus mean?
+  27  MATH202   paraphrase  YES   OK    0.9318   290.7         Walk me through what a derivative in calculus means.
+  28  MATH202   original    NO    OK    0.6952   5960.4        Could you tell me what the chain rule is?
+  29  MATH202   repeat      YES   OK    1.0000   415.2         Could you tell me what the chain rule is?
+  30  MATH202   paraphrase  YES   OK    0.9649   291.6         I'd like to understand what the chain rule is, can you explain?
+  31  MATH202   original    NO    OK    0.7635   6032.4        What is integration in calculus?
+  32  MATH202   repeat      YES   OK    1.0000   546.1         What is integration in calculus?
+  33  MATH202   paraphrase  NO    OK    0.6758   6716.0        How do you calculate the area under a curve?
+  34  MATH202   original    NO    OK    0.6686   4359.0        Can you define an eigenvalue?
+  35  MATH202   repeat      YES   OK    1.0000   395.7         Can you define an eigenvalue?
+  36  MATH202   paraphrase  YES   OK    0.9076   286.1         What exactly is an eigenvalue?
+  37  MATH202   original    NO    OK    0.7347   6370.7        Explain matrix multiplication.
+  38  MATH202   repeat      YES   OK    1.0000   207.6         Explain matrix multiplication.
+  39  MATH202   paraphrase  YES   OK    0.9545   492.6         Could you describe what matrix multiplication means?
+  40  MATH202   original    NO    OK    0.6533   4729.0        What is a probability distribution?
+  41  MATH202   repeat      YES   OK    1.0000   248.7         What is a probability distribution?
+  42  MATH202   paraphrase  YES   OK    0.9280   291.1         Please explain the concept of a probability distribution.
+  43  PHYS404   original    NO    OK    N/A      5347.6        What does quantum entanglement mean?
+  44  PHYS404   repeat      YES   OK    1.0000   230.5         What does quantum entanglement mean?
+  45  PHYS404   paraphrase  YES   OK    0.9135   290.9         Tell me what quantum entanglement is.
+  46  PHYS404   original    NO    OK    0.5895   5179.3        Could you tell me what Newton's second law of motion is?
+  47  PHYS404   repeat      YES   OK    1.0000   198.6         Could you tell me what Newton's second law of motion is?
+  48  PHYS404   paraphrase  YES   OK    0.9533   291.8         How would you define Newton's second law of motion?
+  49  PHYS404   original    YES   XX    0.8342   486.6         What is the second law of thermodynamics?
+  50  PHYS404   repeat      YES   OK    0.8342   285.2         What is the second law of thermodynamics?
+  51  PHYS404   paraphrase  NO    OK    0.5711   5692.5        Why does entropy always increase in an isolated system?
+  52  PHYS404   original    NO    OK    0.6923   4713.3        Can you define wave-particle duality?
+  53  PHYS404   repeat      YES   OK    1.0000   267.5         Can you define wave-particle duality?
+  54  PHYS404   paraphrase  YES   OK    0.9414   285.9         What exactly is wave-particle duality?
+  55  PHYS404   original    NO    OK    0.7700   6591.1        Explain special relativity.
+  56  PHYS404   repeat      YES   OK    1.0000   392.5         Explain special relativity.
+  57  PHYS404   paraphrase  YES   OK    0.9273   490.5         I'd like to understand what special relativity is, can you explain?
+  58  PHYS404   original    NO    OK    0.7486   6455.1        What does Schrodinger's equation mean?
+  59  PHYS404   repeat      YES   OK    1.0000   522.7         What does Schrodinger's equation mean?
+  60  PHYS404   paraphrase  YES   OK    0.9326   486.6         Walk me through what Schrodinger's equation means.
+
+==================================================================================
+  END OF REPORT
+==================================================================================

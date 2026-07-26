@@ -1,0 +1,14 @@
+pymilvus
+redis
+pydantic
+pydantic-settings
+sentence-transformers
+torch                 
+huggingface_hub     
+fastapi
+uvicorn
+pytest
+pytest-asyncio
+httpx
+python-dotenv
+fakeredis
