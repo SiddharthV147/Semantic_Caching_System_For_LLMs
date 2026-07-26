@@ -1,10 +1,10 @@
-# LMS Semantic Cache 🚀
+# LMS Semantic Cache 
 
 A high-performance, context-aware semantic caching system for Learning Management Systems (LMS) designed to dramatically reduce AI API costs and serve instant responses to rephrased student questions.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
                       ┌─────────────────────────────────┐
@@ -46,19 +46,7 @@ A high-performance, context-aware semantic caching system for Learning Managemen
                         └─────────────────────────────┘
 ```
 
----
-
-## ✨ Key Features
-
-* **🧠 Semantic Matching:** Converts incoming text to dense vector embeddings to match similar questions even when phrased differently.
-* **🔒 Strict Course Isolation:** Logical data separation ensures questions asked in `CS101` never pollute or leak cached answers into `MATH202`.
-* **⚡ Ultra-Low Latency:** Reduces response latency from **5–8 seconds** (LLM generation) down to **400–600 ms** on a cache hit.
-* **🔌 Simple REST API:** Powered by FastAPI with fully interactive Swagger documentation (`/docs`).
-* **🐳 Containerized Infrastructure:** Docker Compose setup for local orchestration of Milvus and Redis.
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology | Purpose |
 |---|---|---|
@@ -71,7 +59,7 @@ A high-performance, context-aware semantic caching system for Learning Managemen
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 lms-semantic-cache/
@@ -93,7 +81,7 @@ lms-semantic-cache/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -157,7 +145,7 @@ Explore the interactive API documentation at **`http://localhost:8000/docs`**.
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
 ### Key Endpoints
 
@@ -182,18 +170,11 @@ curl -X POST http://localhost:8000/api/v1/query \
 
 ---
 
-## 📊 Performance & Benchmarks
+## Performance & Benchmarks
 
 Benchmarked using `demo_cache_performance.py` over a dataset of 60 queries across 20 concept groups:
 
-* **Cache Hit Rate Target:** ~60%
+* **Cache Hit Rate Target:** ~65%
 * **Cache Hit Latency:** ~400–600 ms (Vector embedding generation + Redis lookup)
 * **Cache Miss Latency:** ~5,000–8,000 ms (Vector generation + Remote LLM API invocation)
 * **Performance Gain:** **~10x to 15x speedup** on cache hits
-
----
-
-## 👤 Author
-
-**Siddharth**  
-*Final Year Computer Science Student — JSPM's BSIOTR Pune*
